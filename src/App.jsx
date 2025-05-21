@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import TraningRecords from './components/TrainingRecords'
+
 
 function App() {
 
 
   return (
     <>
-
+      <TraningRecords />
     </>
   )
 }

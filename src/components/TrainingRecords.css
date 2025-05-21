@@ -1,0 +1,106 @@
+.inputForm {
+    min-width: 600px;
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.form-group {
+    flex: 1;
+    padding: 15px;
+ }
+
+ .submit-btn {
+    height: 50px;
+    width: 50px;
+    background: linear-gradient(135deg, #a0a0a0, #808080);
+    color: white;
+    border: none;
+    padding: 6px 15px; 
+    font-size: 8px;   
+    font-weight: 600;
+    border-radius: 15px; 
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #808080, #606060);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px); 
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5px;
+    height: 2.5px; 
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(10, 10); 
+        opacity: 0;
+    }
+}
+
+
+.resultTable {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.tableRow {
+    display: flex;
+}
+
+
+.tableRow>div {
+    flex:1;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.error {
+    border-color: #ff4444;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    color: #cc0000;
+}
