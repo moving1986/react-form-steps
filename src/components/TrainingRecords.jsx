@@ -79,6 +79,15 @@ const TraningRecords = () => {
       setTrainings(prev => prev.filter(training => training.id !== id));
     };
   
+    const handleEdit = (id) => {
+        const editTraining = trainings.find(training => training.id === id);
+        if (editTraining) {
+          setFormData({
+            date: editTraining.date,
+            distance: editTraining.distance
+          });
+        }
+      }
     const formatDate = (dateStr) => {
       const date = new Date(dateStr);
       const day = date.getDate().toString().padStart(2, '0');
@@ -99,7 +108,7 @@ const TraningRecords = () => {
                 <label>Дата(ДД.ММ.ГГ)</label><br />
                 <input type="date"
                  name="date" 
-                 value={formData.value}
+                 value={formData.date}
                  onChange={handleChange}
                  className={errors.date ? 'error' : ''}
                  />
@@ -123,13 +132,21 @@ const TraningRecords = () => {
              <div className="tableRow">
                 <div>Дата</div>
                 <div>Пройдено км</div>
-                <div>Действия</div>
+                <div>Редактировать</div>
              </div>
            {sortedTrainings.map((training, index) => (
              <div className="tableRow" key={index}>
                 <div>{formatDate(training.date)}</div>
                 <div>{parseFloat(training.distance).toFixed(1)}</div>
-                <div><button 
+                <div>
+                    <button 
+                      onClick={() => handleEdit(training.id)}
+                      className="edit-btn"
+                      aria-label="Редактировать"
+                    >
+                      ✎
+                    </button>
+                    <button 
                       onClick={() => handleDelete(training.id)}
                       className="delete-btn"
                       aria-label="Удалить"

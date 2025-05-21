@@ -101,6 +101,16 @@
     line-height: 1;
 }
 
-.delete-btn:hover {
+.delete-btn:hover, .edit-btn:hover {
     color: #cc0000;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: #eb9a05;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
 }
